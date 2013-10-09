@@ -1,0 +1,32 @@
+﻿@model GUI.Web.Models.ViewModelLogin
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div style="margin-left: 60px;">
+        @Html.ValidationSummary(true)
+        <p style="color: #0099CC">Efetue o Login</p>
+        <div class="field-validation-error">@ViewBag.Menssage</div>
+        <div class="">
+            <input type="text" name="Login" value="" placeholder="Usuário" />
+        </div>
+        <div>
+            @Html.ValidationMessageFor(model => model.Login)
+        </div>
+
+        <div class="">
+
+            @Html.PasswordFor(model => model.Senha, new { style = "", placeholder = "Senha" })
+        </div>
+        <div>
+            @Html.ValidationMessageFor(model => model.Senha)
+        </div>
+        <div class="">
+            <input type="submit" class="" value="Acessar" />
+            <input type="reset" class="" value="Limpar" />
+        </div>
+    </div>
+}

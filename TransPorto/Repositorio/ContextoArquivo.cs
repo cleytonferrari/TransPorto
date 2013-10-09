@@ -5,7 +5,7 @@ using Dominio.Interfaces;
 
 namespace Repositorio
 {
-    class ContextoArquivo<T> : IContextoArquivo<T> where T : Entidade
+    public class ContextoArquivo<T> : IContextoArquivo<T> where T : Entidade
     {
         private readonly Contexto<T> _contexto;
 
