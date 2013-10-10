@@ -207,7 +207,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Areas\Painel\Views\Web.config" />
-    <Content Include="Areas\Painel\Views\Shared\_Painel.cshtml" />
     <Content Include="Areas\Painel\Views\Home\Index.cshtml" />
     <Content Include="Areas\Painel\Views\Usuario\Index.cshtml" />
     <Content Include="Areas\Painel\Views\Usuario\Cadastrar.cshtml" />
@@ -229,6 +228,7 @@
     <Content Include="Areas\Painel\Views\Agenda\Editar.cshtml" />
     <Content Include="Areas\Painel\Views\Agenda\Excluir.cshtml" />
     <Content Include="Areas\Painel\Views\Agenda\Detalhes.cshtml" />
+    <Content Include="Areas\Painel\Views\Shared\_Painel.cshtml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
