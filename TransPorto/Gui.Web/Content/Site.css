@@ -59,3 +59,94 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
+
+/* Resete */
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    float: left;
+}*/
+
+.img-troca {
+    text-indent: -9999px;
+    overflow: hidden;
+}
+/* Fim Resete */
+
+/* Elemento Agrupados */
+header section h1, header section h1 a, header section .menu, header section .menu li, header section .menu li a, .menu_login a, footer {
+    display: block;
+    float: left;
+}
+
+/* Inicio Cabeçalho */
+header {
+    width: 100%;
+    background: url(img/bg_menu_topo.png) repeat-x scroll top left;
+}
+
+    header section {
+        width: 1003px;
+        height: 100px;
+    }
+
+        header section h1 {
+            width: 131px;
+            height: 81px;
+            margin: 7px 0 0 100px;
+        }
+
+            header section h1 a {
+                width: 131px;
+                height: 81px;
+                background: url(img/logo.png) no-repeat scroll top left;
+            }
+
+        header section .menu {
+            width: 540px;
+            height: 81px;
+        }
+
+            header section .menu li {
+                width: 100px;
+                height: 80px;
+                margin-top: 5px;
+            }
+
+                header section .menu li:hover {
+                    background-color: #CD261E;
+                }
+
+                header section .menu li:first-child {
+                    margin: 5px 0 0 37px;
+                }
+
+                header section .menu li a {
+                    width: 100px;
+                    height: 40px;
+                    margin-top: 1px;
+                    padding-top: 30px;
+                    text-align: center;
+                    font: bold 14px Arial, Helvetica, sans-serif;
+                    color: #fff;
+                }
+/* Fim Cabeçalho */
+/* Inicio Rodape */
+footer {
+    width: 100%;
+    height: 150px;
+    background: url(img/bg_footer.png) repeat-x scroll top left;
+}
+/* Fim Rodape */

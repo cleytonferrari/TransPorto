@@ -65,5 +65,9 @@ namespace Gui.Web.Areas.Painel.Controllers
             return RedirectToAction("Index", "Usuario");
         }
 
+        public ActionResult Detalhes(string id)
+        {
+            return View(Construtor<Usuario>.AplicacaoUsuario().ListarPorId(id));
+        }
     }
 }

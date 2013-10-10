@@ -1,0 +1,44 @@
+﻿@model Dominio.Veiculo
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Areas/Painel/Views/Shared/_Painel.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Veiculo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Modelo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Modelo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Placa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Placa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuantidadeDePassageiros)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuantidadeDePassageiros)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estatus)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id=Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

@@ -19,5 +19,18 @@ namespace Aplicacao
         {
             return new AplicacaoUsuario(new ContextoAplicacao<Usuario>());
         }
+
+        public static AplicacaoMotorista AplicacaoMotorista()
+        {
+            return new AplicacaoMotorista(new ContextoAplicacao<Motorista>());
+        }
+        public static AplicacaoVeiculo AplicacaoVeiculo()
+        {
+            return new AplicacaoVeiculo(new ContextoAplicacao<Veiculo>());
+        }
+        public static AplicacaoAgenda AplicacaoAgenda()
+        {
+            return new AplicacaoAgenda(new ContextoAplicacao<Agenda>());
+        }
     }
 }

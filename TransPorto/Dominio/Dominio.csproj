@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agenda.cs" />
+    <Compile Include="CompanhiasAereas.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="Entidade.cs" />
     <Compile Include="Estado.cs" />
+    <Compile Include="Horarios.cs" />
     <Compile Include="Interfaces\IContexto.cs" />
     <Compile Include="Interfaces\IContextoArquivo.cs" />
     <Compile Include="Motorista.cs" />

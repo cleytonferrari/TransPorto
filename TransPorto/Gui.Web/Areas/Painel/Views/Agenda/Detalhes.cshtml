@@ -1,0 +1,30 @@
+﻿@model Dominio.Agenda
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Areas/Painel/Views/Shared/_Painel.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Agenda</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataAgendada)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataAgendada)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrigemDestino)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrigemDestino)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id=Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

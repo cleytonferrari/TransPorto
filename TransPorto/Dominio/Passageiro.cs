@@ -18,6 +18,11 @@ namespace Dominio
 
         [Required(ErrorMessage = "O Endereço deve ser informado!")]
         [Display(Name = "Endereço")]
-        public Endereco Endereco { get; set; }
+        private Endereco Endereco { get; set; }
+
+        public bool Buscar { get; set; }
+
+        [Display(Name = "Companhia Aerea")]
+        public CompanhiasAereas CompanhiasAereas { get; set; }
     }
 }

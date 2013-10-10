@@ -1,0 +1,48 @@
+﻿@model Dominio.Veiculo
+
+@{
+    ViewBag.Title = "Excluir";
+    Layout = "~/Areas/Painel/Views/Shared/_Painel.cshtml";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você realmente deseja excluir este registro?</h3>
+<fieldset>
+    <legend>Veiculo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Modelo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Modelo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Placa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Placa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuantidadeDePassageiros)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuantidadeDePassageiros)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estatus)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+}

@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aplicacao.cs" />
+    <Compile Include="AplicacaoMotorista.cs" />
+    <Compile Include="AplicacaoAgenda.cs" />
+    <Compile Include="AplicacaoVeiculo.cs" />
     <Compile Include="AplicacaoUsuario.cs" />
     <Compile Include="Construtor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

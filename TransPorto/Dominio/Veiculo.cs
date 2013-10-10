@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dominio
 {
@@ -22,6 +18,6 @@ namespace Dominio
         public bool Estatus { get; set; }
 
         [Required(ErrorMessage = "Quais os dias que o veiculo estara disponivel?")]
-        public List<string> Disponive { get; set; }
+        public List<string> Disponivel { get; set; }
     }
 }

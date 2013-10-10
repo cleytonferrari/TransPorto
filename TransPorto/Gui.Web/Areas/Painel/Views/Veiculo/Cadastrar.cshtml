@@ -1,0 +1,57 @@
+﻿@model Dominio.Veiculo
+
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Areas/Painel/Views/Shared/_Painel.cshtml";
+}
+
+<h2>Cadastrar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Veiculo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Modelo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Modelo)
+            @Html.ValidationMessageFor(model => model.Modelo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Placa)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Placa)
+            @Html.ValidationMessageFor(model => model.Placa)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuantidadeDePassageiros)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.QuantidadeDePassageiros)
+            @Html.ValidationMessageFor(model => model.QuantidadeDePassageiros)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Estatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Estatus)
+            @Html.ValidationMessageFor(model => model.Estatus)
+        </div>
+
+        <p>
+            <input type="submit" value="Cadastrar" />
+            @Html.ActionLink("Voltar", "Index")
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
