@@ -128,6 +128,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Painel\Controllers\HomeController.cs" />
     <Compile Include="Areas\Painel\Controllers\AgendaController.cs" />
+    <Compile Include="Areas\Painel\Controllers\PassageiroController.cs" />
     <Compile Include="Areas\Painel\Controllers\VeiculoController.cs" />
     <Compile Include="Areas\Painel\Controllers\MotoristaController.cs" />
     <Compile Include="Areas\Painel\Controllers\UsuarioController.cs" />
@@ -230,6 +231,7 @@
     <Content Include="Areas\Painel\Views\Agenda\Detalhes.cshtml" />
     <Content Include="Areas\Painel\Views\Shared\_Painel.cshtml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\Agenda.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.3.js" />

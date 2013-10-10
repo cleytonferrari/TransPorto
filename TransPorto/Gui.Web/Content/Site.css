@@ -83,6 +83,31 @@ a {
     text-indent: -9999px;
     overflow: hidden;
 }
+
+.divtransparente {
+    width: 100%;
+    height: 100%;
+    display: none;
+    float: left;
+    margin: auto;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background: #000;
+}
+
+.divconteudo {
+    text-align: center;
+    width: 100%;
+    display: none;
+    float: left;
+    margin: auto;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+}
 /* Fim Resete */
 
 /* Elemento Agrupados */

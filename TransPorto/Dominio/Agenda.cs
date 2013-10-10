@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dominio
 {
@@ -7,8 +8,15 @@ namespace Dominio
     {
         public Veiculo Veiculo { get; set; }
         public Motorista Motorista { get; set; }
-        public List<Passageiro> Passageiro { get; set; }
+        public Passageiro Passageiro { get; set; }
         public DateTime DataAgendada { get; set; }
+        
+        [Display(Name = "Origem e Destino")]
         public string OrigemDestino { get; set; }
+        public string Buscar { get; set; }
+        
+        [Display(Name = "Companhia Aerea")]
+        public CompanhiasAereas CompanhiasAereas { get; set; }
+
     }
 }

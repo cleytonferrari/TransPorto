@@ -7,7 +7,7 @@ namespace Gui.Web.Areas.Painel.Controllers
     public class VeiculoController : Controller
     {
         //
-        // GET: /Painel/Veiculo/
+        // GET: /Painel/Passageiro/
 
         public ActionResult Index()
         {
@@ -20,11 +20,11 @@ namespace Gui.Web.Areas.Painel.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(Veiculo veiculo)
+        public ActionResult Cadastrar(Veiculo passageiro)
         {
             if (!ModelState.IsValid)
-                return View(veiculo);
-            Construtor<Veiculo>.AplicacaoVeiculo().Salvar(veiculo);
+                return View(passageiro);
+            Construtor<Veiculo>.AplicacaoVeiculo().Salvar(passageiro);
             return RedirectToAction("Index", "Veiculo");
 
         }
@@ -38,11 +38,11 @@ namespace Gui.Web.Areas.Painel.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Veiculo veiculo)
+        public ActionResult Editar(Veiculo passageiro)
         {
             if (!ModelState.IsValid)
-                return View(veiculo);
-            Construtor<Veiculo>.AplicacaoVeiculo().Salvar(veiculo);
+                return View(passageiro);
+            Construtor<Veiculo>.AplicacaoVeiculo().Salvar(passageiro);
             return RedirectToAction("Index", "Veiculo");
         }
 
@@ -55,9 +55,9 @@ namespace Gui.Web.Areas.Painel.Controllers
         }
 
         [HttpPost, ActionName("Excluir")]
-        public ActionResult ConfirmarExcluir(Veiculo veiculo)
+        public ActionResult ConfirmarExcluir(Veiculo passageiro)
         {
-            Construtor<Veiculo>.AplicacaoVeiculo().Excluir(veiculo.Id);
+            Construtor<Veiculo>.AplicacaoVeiculo().Excluir(passageiro.Id);
             return RedirectToAction("Index", "Veiculo");
         }
 

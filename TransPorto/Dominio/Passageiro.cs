@@ -1,9 +1,8 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Dominio
 {
-    public class Passageiro
+    public class Passageiro : Entidade
     {
         public Passageiro()
         {
@@ -19,10 +18,5 @@ namespace Dominio
         [Required(ErrorMessage = "O Endereço deve ser informado!")]
         [Display(Name = "Endereço")]
         private Endereco Endereco { get; set; }
-
-        public bool Buscar { get; set; }
-
-        [Display(Name = "Companhia Aerea")]
-        public CompanhiasAereas CompanhiasAereas { get; set; }
     }
 }

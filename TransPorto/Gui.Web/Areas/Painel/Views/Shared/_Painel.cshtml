@@ -15,19 +15,19 @@
             </h1>
             <ul class="menu">
                 <li>
-                    <a href="@Html.Action("Index","Usuario")">Usuarios</a>
+                    @Html.ActionLink("Usuarios","Index","Usuario");
                 </li>
                 <li>
-                    <a href="@Html.Action("Index","Motorista")">Motoristas</a>
+                    @Html.ActionLink("Motoristas","Index","Motorista")
                 </li>
                 <li>
-                    <a href="@Html.Action("Index","Motorista")">Veiculos</a>
+                    @Html.ActionLink("Veiculos","Index","Veiculo")
                 </li>
                 <li>
-                    <a href="#">Passageiros</a>
+                    @Html.ActionLink("Passageiros","Index","Passageiro")
                 </li>
                 <li>
-                    <a href="@Html.Action("Index","Agenda")">Agenda</a>
+                    @Html.ActionLink("Agenda","Index","Agenda")
                 </li>
             </ul>
         </section>

@@ -32,5 +32,9 @@ namespace Aplicacao
         {
             return new AplicacaoAgenda(new ContextoAplicacao<Agenda>());
         }
+        public static AplicacaoPassageiro AplicacaoPassageiro()
+        {
+            return new AplicacaoPassageiro(new ContextoAplicacao<Passageiro>());
+        }
     }
 }
