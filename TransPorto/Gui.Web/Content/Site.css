@@ -99,6 +99,7 @@ a {
 
 .divconteudo {
     text-align: center;
+    height: 100px;
     width: 100%;
     display: none;
     float: left;
@@ -107,6 +108,10 @@ a {
     z-index: 5;
     top: 0;
     left: 0;
+    background: #fff;
+}
+.teste {
+    
 }
 /* Fim Resete */
 
@@ -140,7 +145,7 @@ header {
             }
 
         header section .menu {
-            width: 540px;
+            width: 740px;
             height: 81px;
         }
 

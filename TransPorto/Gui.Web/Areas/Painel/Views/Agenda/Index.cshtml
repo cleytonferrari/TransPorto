@@ -4,15 +4,17 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Painel/Views/Shared/_Painel.cshtml";
 }
-<script src="~/Scripts/Agenda.js"></script>
+<script src="~/Scripts/jquery-2.0.3.min.js"></script>
+<script src="~/Scripts/lightbox.js"></script>
 <h2>Index</h2>
 
-<div class="divtransparente"></div>
+<div class="divtransparente" data-bind="click: sumi "></div>
 <div class="divconteudo"></div>
 
 <p>
     @Html.ActionLink("Cadastrar", "Cadastrar")
 </p>
+<a href="#" class="teste" data-bind="click: listar ">Click</a>
 <table>
     <tr>
         <th>
@@ -24,20 +26,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataAgendada)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrigemDestino)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.Id }) |
-            @Html.ActionLink("Excluir", "Excluir", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAgendada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrigemDestino)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

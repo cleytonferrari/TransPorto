@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Agenda.cs" />
     <Compile Include="CompanhiasAereas.cs" />
+    <Compile Include="DiaDaSemana.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="Entidade.cs" />
     <Compile Include="Estado.cs" />

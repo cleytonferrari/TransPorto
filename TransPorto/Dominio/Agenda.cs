@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dominio
@@ -17,6 +16,8 @@ namespace Dominio
         
         [Display(Name = "Companhia Aerea")]
         public CompanhiasAereas CompanhiasAereas { get; set; }
+
+        public double ValorPassage { get; set; }
 
     }
 }

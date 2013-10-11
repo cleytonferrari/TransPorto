@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Web.Mvc;
 using Aplicacao;
 using Dominio;
 
@@ -64,6 +66,21 @@ namespace Gui.Web.Areas.Painel.Controllers
         public ActionResult Detalhes(string id)
         {
             return View(Construtor<Veiculo>.AplicacaoVeiculo().ListarPorId(id));
+        }
+
+        public void CarregarDiaDaSemana()
+        {
+            List<string> DiaDaSemana = new List<string>
+                                       {
+                                           "Segunda",
+                                           "Terça",
+                                           "Quarta",
+                                           "Quinta",
+                                           "Sexta",
+                                           "Sabado",
+                                           "Domingo"
+                                       };
+            ViewBag.ListaDeDias = DiaDaSemana;
         }
     }
 }

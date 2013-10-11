@@ -7,12 +7,13 @@
 
 <h2>Cadastrar</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Passageiro</legend>
+        <legend>Veiculos</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Modelo)
@@ -45,7 +46,14 @@
             @Html.EditorFor(model => model.Estatus)
             @Html.ValidationMessageFor(model => model.Estatus)
         </div>
+        <div>
+            @Html.LabelFor(model => model.Disponivel)
+        </div>
 
+        <div>
+            @Html.DropDownListFor(model => model.Disponivel, (SelectList)ViewBag.ListaDeDias)
+            @Html.ValidationMessageFor(model => model.Disponivel)
+        </div>
         <p>
             <input type="submit" value="Cadastrar" />
             @Html.ActionLink("Voltar", "Index")

@@ -18,6 +18,6 @@ namespace Dominio
         public bool Estatus { get; set; }
 
         [Required(ErrorMessage = "Quais os dias que o veiculo estara disponivel?")]
-        public List<string> Disponivel { get; set; }
+        public string Disponivel { get; set; }
     }
 }
