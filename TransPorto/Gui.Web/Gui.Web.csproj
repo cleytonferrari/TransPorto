@@ -134,8 +134,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Painel\Controllers\DiaController.cs" />
-    <Compile Include="Areas\Painel\Controllers\CompanhiaController.cs" />
     <Compile Include="Areas\Painel\Controllers\HomeController.cs" />
     <Compile Include="Areas\Painel\Controllers\AgendaController.cs" />
     <Compile Include="Areas\Painel\Controllers\PassageiroController.cs" />
@@ -225,7 +223,6 @@
     <Content Include="Areas\Painel\Views\Usuario\Excluir.cshtml" />
     <Content Include="Areas\Painel\Views\Usuario\Detalhes.cshtml" />
     <Content Include="Areas\Painel\Views\Veiculo\Index.cshtml" />
-    <Content Include="Areas\Painel\Views\Veiculo\Cadastrar.cshtml" />
     <Content Include="Areas\Painel\Views\Veiculo\Editar.cshtml" />
     <Content Include="Areas\Painel\Views\Veiculo\Excluir.cshtml" />
     <Content Include="Areas\Painel\Views\Veiculo\Detalhes.cshtml" />
@@ -240,11 +237,13 @@
     <Content Include="Areas\Painel\Views\Agenda\Excluir.cshtml" />
     <Content Include="Areas\Painel\Views\Agenda\Detalhes.cshtml" />
     <Content Include="Areas\Painel\Views\Shared\_Painel.cshtml" />
-    <Content Include="Areas\Painel\Views\Dia\Index.cshtml" />
-    <Content Include="Areas\Painel\Views\Dia\Cadastrar.cshtml" />
-    <Content Include="Areas\Painel\Views\Dia\Editar.cshtml" />
-    <Content Include="Areas\Painel\Views\Dia\Excluir.cshtml" />
-    <Content Include="Areas\Painel\Views\Dia\Detalhes.cshtml" />
+    <Content Include="Areas\Painel\Views\Veiculo\Cadastrar.cshtml" />
+    <Content Include="Areas\Painel\Views\Passageiro\Index.cshtml" />
+    <Content Include="Areas\Painel\Views\Passageiro\Cadastrar.cshtml" />
+    <Content Include="Areas\Painel\Views\Passageiro\Editar.cshtml" />
+    <Content Include="Areas\Painel\Views\Passageiro\Excluir.cshtml" />
+    <Content Include="Areas\Painel\Views\Passageiro\Detalhes.cshtml" />
+    <None Include="Properties\PublishProfiles\7con.pubxml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\Agenda.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />

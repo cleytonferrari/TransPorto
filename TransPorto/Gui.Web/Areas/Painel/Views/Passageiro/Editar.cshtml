@@ -1,0 +1,93 @@
+﻿@model Dominio.Passageiro
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Areas/Painel/Views/Shared/_Painel.cshtml";
+}
+
+<h2>Editar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Passageiro</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Contato)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Contato)
+            @Html.ValidationMessageFor(model => model.Contato)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Endereco.Logradouro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Endereco.Logradouro)
+            @Html.ValidationMessageFor(model => model.Endereco.Logradouro)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Endereco.Numero)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Endereco.Numero)
+            @Html.ValidationMessageFor(model => model.Endereco.Numero)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Endereco.Bairro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Endereco.Bairro)
+            @Html.ValidationMessageFor(model => model.Endereco.Bairro)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Endereco.Cep)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Endereco.Cep)
+            @Html.ValidationMessageFor(model => model.Endereco.Cep)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Buscar)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Buscar")
+            @Html.ValidationMessageFor(model => model.Buscar)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanhiasAereas)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CompanhiasAereas")
+            @Html.ValidationMessageFor(model => model.CompanhiasAereas)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorPassage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorPassage)
+            @Html.ValidationMessageFor(model => model.ValorPassage)
+        </div>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <p>
+            <input type="submit" value="Salvar" />
+            @Html.ActionLink("Voltar", "Index")
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

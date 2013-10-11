@@ -18,10 +18,22 @@
 <table>
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Veiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Motorista)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Passageiro)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.DataAgendada)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OrigemDestino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Horario)
         </th>
         <th></th>
     </tr>
@@ -30,12 +42,24 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Veiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motorista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passageiro)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.DataAgendada)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OrigemDestino)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Horario)
+            </td>
+           <td>
                 @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
                 @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
                 @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })

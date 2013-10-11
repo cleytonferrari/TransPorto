@@ -4,6 +4,7 @@ using Dominio;
 
 namespace Gui.Web.Areas.Painel.Controllers
 {
+    [Authorize]
     public class MotoristaController : Controller
     {
         //

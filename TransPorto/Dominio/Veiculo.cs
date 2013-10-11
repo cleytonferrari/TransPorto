@@ -15,9 +15,9 @@ namespace Dominio
         public string QuantidadeDePassageiros { get; set; }
 
         [Required(ErrorMessage = "O veiculo esta em condições operacionais?")]
-        public bool Estatus { get; set; }
+        public string Estatus { get; set; }
 
         [Required(ErrorMessage = "Quais os dias que o veiculo estara disponivel?")]
-        public string Disponivel { get; set; }
+        public string[] Disponivel { get; set; }
     }
 }

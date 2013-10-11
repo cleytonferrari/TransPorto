@@ -43,7 +43,7 @@
             @Html.LabelFor(model => model.Estatus)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Estatus)
+            @Html.DropDownList("Estatus")
             @Html.ValidationMessageFor(model => model.Estatus)
         </div>
         <div>
@@ -51,7 +51,7 @@
         </div>
 
         <div>
-            @Html.DropDownListFor(model => model.Disponivel, (SelectList)ViewBag.ListaDeDias)
+            @Html.ListBox("Disponivel")
             @Html.ValidationMessageFor(model => model.Disponivel)
         </div>
         <p>

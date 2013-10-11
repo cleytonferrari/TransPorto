@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Dominio.Passageiro>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Painel/Views/Shared/_Painel.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Cadastrar")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Logradouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Bairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.Cep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Buscar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanhiasAereas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorPassage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco.Logradouro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco.Bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco.Cep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Buscar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanhiasAereas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorPassage)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

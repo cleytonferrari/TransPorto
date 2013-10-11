@@ -24,6 +24,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Estatus)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponivel)
+            </th>
         <th></th>
     </tr>
 
@@ -41,6 +44,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Estatus)
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponivel)<br/>
+            </td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
             @Html.ActionLink("Detalhes", "Detalhes", new { id=item.Id }) |

@@ -635,7 +635,7 @@ ko.utils.domNodeDisposal = new (function () {
         if ((typeof jQuery == "function") && (typeof jQuery['cleanData'] == "function"))
             jQuery['cleanData']([node]);
 
-        // Also clear any immediate-child comment nodes, as these wouldn't have been found by
+        // Also clear any immeDescricaote-child comment nodes, as these wouldn't have been found by
         // node.getElementsByTagName("*") in cleanNode() (comment nodes aren't elements)
         if (cleanableNodeTypesWithDescendants[node.nodeType])
             cleanImmediateCommentTypeChildren(node);
@@ -1813,7 +1813,7 @@ ko.exportSymbol('jsonExpressionRewriting.insertPropertyAccessorsIntoJson', ko.ex
                     captureRemaining.push(childNode);
                 else if (isStartComment(childNode)) {
                     var matchingEndComment = getMatchingEndComment(childNode, /* allowUnbalanced: */ true);
-                    if (matchingEndComment)             // It's a balanced tag, so skip immediately to the end of this virtual set
+                    if (matchingEndComment)             // It's a balanced tag, so skip immeDescricaotely to the end of this virtual set
                         childNode = matchingEndComment;
                     else
                         captureRemaining = [childNode]; // It's unbalanced, so start capturing from this point
@@ -1908,7 +1908,7 @@ ko.exportSymbol('jsonExpressionRewriting.insertPropertyAccessorsIntoJson', ko.ex
             if (!htmlTagsWithOptionallyClosingChildren[ko.utils.tagNameLower(elementVerified)])
                 return;
 
-            // Scan immediate children to see if they contain unbalanced comment tags. If they do, those comment tags
+            // Scan immeDescricaote children to see if they contain unbalanced comment tags. If they do, those comment tags
             // must be intended to appear *after* that child, so move them there.
             var childNode = elementVerified.firstChild;
             if (childNode) {
@@ -2068,7 +2068,7 @@ ko.exportSymbol('bindingProvider', ko.bindingProvider);
             //  * For children of a *real* element, the binding context is certainly the same as on their DOM .parentNode,
             //    hence bindingContextsMayDifferFromDomParentElement is false
             //  * For children of a *virtual* element, we can't be sure. Evaluating .parentNode on those children may
-            //    skip over any number of intermediate virtual elements, any of which might define a custom binding context,
+            //    skip over any number of intermeDescricaote virtual elements, any of which might define a custom binding context,
             //    hence bindingContextsMayDifferFromDomParentElement is true
             applyBindingsToDescendantsInternal(viewModel, nodeVerified, /* bindingContextsMayDifferFromDomParentElement: */ !isElement);
         }

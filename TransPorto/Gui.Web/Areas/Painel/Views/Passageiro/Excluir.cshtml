@@ -1,0 +1,76 @@
+﻿@model Dominio.Passageiro
+
+@{
+    ViewBag.Title = "Excluir";
+    Layout = "~/Areas/Painel/Views/Shared/_Painel.cshtml";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você realemnte deseja excluir este registro?</h3>
+<fieldset>
+    <legend>Passageiro</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contato)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Endereco.Logradouro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Endereco.Logradouro)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Endereco.Numero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Endereco.Numero)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Endereco.Bairro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Endereco.Bairro)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Endereco.Cep)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Endereco.Cep)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Buscar)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Buscar)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.CompanhiasAereas)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanhiasAereas)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ValorPassage)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorPassage)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+}

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Gui.Web.Areas.Painel.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         //

@@ -42,7 +42,6 @@
     <Compile Include="Aplicacao.cs" />
     <Compile Include="AplicacaoMotorista.cs" />
     <Compile Include="AplicacaoAgenda.cs" />
-    <Compile Include="AplicacaoCompanhia.cs" />
     <Compile Include="AplicacaoPassageiro.cs" />
     <Compile Include="AplicacaoVeiculo.cs" />
     <Compile Include="AplicacaoUsuario.cs" />

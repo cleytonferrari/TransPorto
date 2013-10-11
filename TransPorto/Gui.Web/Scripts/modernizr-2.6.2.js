@@ -149,7 +149,7 @@ window.Modernizr = (function( window, document, undefined ) {
     /*>>teststyles*/
 
     /*>>mq*/
-    // adapted from matchMedia polyfill
+    // adapted from matchMeDescricao polyfill
     // by Scott Jehl and Paul Irish
     // gist.github.com/786768
     testMediaQuery = function( mq ) {
@@ -161,7 +161,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
       var bool;
 
-      injectElementWithStyles('@media ' + mq + ' { #' + mod + ' { position: absolute; } }', function( node ) {
+      injectElementWithStyles('@meDescricao ' + mq + ' { #' + mod + ' { position: absolute; } }', function( node ) {
         bool = (window.getComputedStyle ?
                   getComputedStyle(node, null) :
                   node.currentStyle)['position'] == 'absolute';
@@ -454,7 +454,7 @@ window.Modernizr = (function( window, document, undefined ) {
         if(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
           bool = true;
         } else {
-          injectElementWithStyles(['@media (',prefixes.join('touch-enabled),('),mod,')','{#modernizr{top:9px;position:absolute}}'].join(''), function( node ) {
+          injectElementWithStyles(['@meDescricao (',prefixes.join('touch-enabled),('),mod,')','{#modernizr{top:9px;position:absolute}}'].join(''), function( node ) {
             bool = node.offsetTop === 9;
           });
         }
@@ -621,7 +621,7 @@ window.Modernizr = (function( window, document, undefined ) {
          * For CSS Gradients syntax, please see:
          * webkit.org/blog/175/introducing-css-gradients/
          * developer.mozilla.org/en/CSS/-moz-linear-gradient
-         * developer.mozilla.org/en/CSS/-moz-radial-gradient
+         * developer.mozilla.org/en/CSS/-moz-raDescricaol-gradient
          * dev.w3.org/csswg/css3-images/#gradients-
          */
 
@@ -660,9 +660,9 @@ window.Modernizr = (function( window, document, undefined ) {
         //   will sometimes throw a false positive, thus we must do a more thorough check:
         if ( ret && 'webkitPerspective' in docElement.style ) {
 
-          // Webkit allows this media query to succeed only if the feature is enabled.
-          // `@media (transform-3d),(-webkit-transform-3d){ ... }`
-          injectElementWithStyles('@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}', function( node, rule ) {
+          // Webkit allows this meDescricao query to succeed only if the feature is enabled.
+          // `@meDescricao (transform-3d),(-webkit-transform-3d){ ... }`
+          injectElementWithStyles('@meDescricao (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}', function( node, rule ) {
             ret = node.offsetLeft === 9 && node.offsetHeight === 3;
           });
         }
@@ -756,7 +756,7 @@ window.Modernizr = (function( window, document, undefined ) {
                 bool.mp3  = elem.canPlayType('audio/mpeg;')               .replace(/^no$/,'');
 
                 // Mimetypes accepted:
-                //   developer.mozilla.org/En/Media_formats_supported_by_the_audio_and_video_elements
+                //   developer.mozilla.org/En/MeDescricao_formats_supported_by_the_audio_and_video_elements
                 //   bit.ly/iphoneoscodecs
                 bool.wav  = elem.canPlayType('audio/wav; codecs="1"')     .replace(/^no$/,'');
                 bool.m4a  = ( elem.canPlayType('audio/x-m4a;')            ||
@@ -1307,11 +1307,11 @@ window.Modernizr = (function( window, document, undefined ) {
     /*>>domprefixes*/
 
     /*>>mq*/
-    // Modernizr.mq tests a given media query, live against the current state of the window
+    // Modernizr.mq tests a given meDescricao query, live against the current state of the window
     // A few important notes:
-    //   * If a browser does not support media queries at all (eg. oldIE) the mq() will always return false
+    //   * If a browser does not support meDescricao queries at all (eg. oldIE) the mq() will always return false
     //   * A max-width or orientation query will be evaluated against the current state, which may change later.
-    //   * You must specify values. Eg. If you are testing support for the min-width media query use:
+    //   * You must specify values. Eg. If you are testing support for the min-width meDescricao query use:
     //       Modernizr.mq('(min-width:0)')
     // usage:
     // Modernizr.mq('only screen and (max-width:768)')

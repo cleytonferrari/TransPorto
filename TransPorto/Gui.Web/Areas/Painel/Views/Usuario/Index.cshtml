@@ -18,9 +18,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Login)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Senha)
-        </th>
         <th></th>
     </tr>
 
@@ -31,9 +28,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Login)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Senha)
         </td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |

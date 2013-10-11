@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Dominio
 {
     public class Motorista:Entidade
     {
+        [Required(ErrorMessage = "O campo deve ser informado!")]
         public string Nome { get; set; }
     }
 }

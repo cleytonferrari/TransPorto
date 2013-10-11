@@ -650,7 +650,7 @@ intellisense.annotate(jQuery.Event.prototype, {
     /// <returns type="Boolean" />
   },
   'isImmediatePropagationStopped': function() {
-    /// <summary>Returns whether event.stopImmediatePropagation() was ever called on this event object.</summary>
+    /// <summary>Returns whether event.stopImmeDescricaotePropagation() was ever called on this event object.</summary>
     /// <returns type="Boolean" />
   },
   'isPropagationStopped': function() {
@@ -1831,14 +1831,14 @@ intellisense.annotate(jQuery.fn, {
   },
   'next': function() {
     /// <signature>
-    ///   <summary>Get the immediately following sibling of each element in the set of matched elements. If a selector is provided, it retrieves the next sibling only if it matches that selector.</summary>
+    ///   <summary>Get the immeDescricaotely following sibling of each element in the set of matched elements. If a selector is provided, it retrieves the next sibling only if it matches that selector.</summary>
     ///   <param name="selector" type="String">A string containing a selector expression to match elements against.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },
   'next adjacent': function() {
     /// <signature>
-    ///   <summary>Selects all next elements matching "next" that are immediately preceded by a sibling "prev".</summary>
+    ///   <summary>Selects all next elements matching "next" that are immeDescricaotely preceded by a sibling "prev".</summary>
     ///   <param name="prev" type="String">Any valid selector.</param>
     ///   <param name="next" type="String">A selector to match the element that is next to the first selector.</param>
     /// </signature>
@@ -2069,7 +2069,7 @@ intellisense.annotate(jQuery.fn, {
   },
   'prev': function() {
     /// <signature>
-    ///   <summary>Get the immediately preceding sibling of each element in the set of matched elements, optionally filtered by a selector.</summary>
+    ///   <summary>Get the immeDescricaotely preceding sibling of each element in the set of matched elements, optionally filtered by a selector.</summary>
     ///   <param name="selector" type="String">A string containing a selector expression to match elements against.</param>
     ///   <returns type="jQuery" />
     /// </signature>
@@ -2401,14 +2401,14 @@ intellisense.annotate(jQuery.fn, {
     /// <signature>
     ///   <summary>Stop the currently-running animation on the matched elements.</summary>
     ///   <param name="clearQueue" type="Boolean">A Boolean indicating whether to remove queued animation as well. Defaults to false.</param>
-    ///   <param name="jumpToEnd" type="Boolean">A Boolean indicating whether to complete the current animation immediately. Defaults to false.</param>
+    ///   <param name="jumpToEnd" type="Boolean">A Boolean indicating whether to complete the current animation immeDescricaotely. Defaults to false.</param>
     ///   <returns type="jQuery" />
     /// </signature>
     /// <signature>
     ///   <summary>Stop the currently-running animation on the matched elements.</summary>
     ///   <param name="queue" type="String">The name of the queue in which to stop animations.</param>
     ///   <param name="clearQueue" type="Boolean">A Boolean indicating whether to remove queued animation as well. Defaults to false.</param>
-    ///   <param name="jumpToEnd" type="Boolean">A Boolean indicating whether to complete the current animation immediately. Defaults to false.</param>
+    ///   <param name="jumpToEnd" type="Boolean">A Boolean indicating whether to complete the current animation immeDescricaotely. Defaults to false.</param>
     ///   <returns type="jQuery" />
     /// </signature>
   },

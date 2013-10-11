@@ -4912,7 +4912,7 @@ $.effects = {
 	// local aliases of functions called often
 	each = jQuery.each;
 
-// determine rgba support immediately
+// determine rgba support immeDescricaotely
 supportElem.style.cssText = "background-color:rgba(1,1,1,.5)";
 support.rgba = supportElem.style.backgroundColor.indexOf( "rgba" ) > -1;
 
@@ -6812,7 +6812,7 @@ $.widget( "ui.autocomplete", {
 				});
 
 				// clicking on the scrollbar causes focus to shift to the body
-				// but we can't detect a mouseup or a click immediately afterward
+				// but we can't detect a mouseup or a click immeDescricaotely afterward
 				// so we have to track the next mousedown and close the menu if
 				// the user clicks somewhere outside of the autocomplete
 				var menuElement = this.menu.element[ 0 ];
@@ -7628,12 +7628,12 @@ function Datepicker() {
 	this._keyEvent = false; // If the last event was a key event
 	this._disabledInputs = []; // List of date picker inputs that have been disabled
 	this._datepickerShowing = false; // True if the popup picker is showing , false if not
-	this._inDialog = false; // True if showing within a "dialog", false if not
+	this._inDialog = false; // True if showing within a "Descricaolog", false if not
 	this._mainDivId = "ui-datepicker-div"; // The ID of the main datepicker division
 	this._inlineClass = "ui-datepicker-inline"; // The name of the inline marker class
 	this._appendClass = "ui-datepicker-append"; // The name of the append marker class
 	this._triggerClass = "ui-datepicker-trigger"; // The name of the trigger marker class
-	this._dialogClass = "ui-datepicker-dialog"; // The name of the dialog marker class
+	this._dialogClass = "ui-datepicker-Descricaolog"; // The name of the Descricaolog marker class
 	this._disableClass = "ui-datepicker-disabled"; // The name of the disabled covering marker class
 	this._unselectableClass = "ui-datepicker-unselectable"; // The name of the unselectable cell marker class
 	this._currentClass = "ui-datepicker-current-day"; // The name of the current day marker class
@@ -7879,12 +7879,12 @@ $.extend(Datepicker.prototype, {
 		inst.dpDiv.css( "display", "block" );
 	},
 
-	/* Pop-up the date picker in a "dialog" box.
+	/* Pop-up the date picker in a "Descricaolog" box.
 	 * @param  input element - ignored
 	 * @param  date	string or Date - the initial date to display
 	 * @param  onSelect  function - the function to call when a date is selected
-	 * @param  settings  object - update the dialog date picker instance's settings (anonymous object)
-	 * @param  pos int[2] - coordinates for the dialog's position within the screen or
+	 * @param  settings  object - update the Descricaolog date picker instance's settings (anonymous object)
+	 * @param  pos int[2] - coordinates for the Descricaolog's position within the screen or
 	 *					event - with x/y coordinates or
 	 *					leave empty for default (screen centre)
 	 * @return the manager object
@@ -7918,7 +7918,7 @@ $.extend(Datepicker.prototype, {
 				[(browserWidth / 2) - 100 + scrollX, (browserHeight / 2) - 150 + scrollY];
 		}
 
-		// move input on screen for focus, but hidden behind dialog
+		// move input on screen for focus, but hidden behind Descricaolog
 		this._dialogInput.css("left", (this._pos[0] + 20) + "px").css("top", this._pos[1] + "px");
 		inst.settings.onSelect = onSelect;
 		this._inDialog = true;
@@ -8490,7 +8490,7 @@ $.extend(Datepicker.prototype, {
 		}
 	},
 
-	/* Tidy up after a dialog display. */
+	/* Tidy up after a Descricaolog display. */
 	_tidyDialog: function(inst) {
 		inst.dpDiv.removeClass(this._dialogClass).unbind(".ui-datepicker-calendar");
 	},
@@ -9655,7 +9655,7 @@ var sizeRelatedOptions = {
 		minWidth: true
 	};
 
-$.widget( "ui.dialog", {
+$.widget( "ui.Descricaolog", {
 	version: "1.10.3",
 	options: {
 		appendTo: "body",
@@ -9773,7 +9773,7 @@ $.widget( "ui.dialog", {
 		}
 
 		next = originalPosition.parent.children().eq( originalPosition.index );
-		// Don't try to place the dialog next to itself (#8613)
+		// Don't try to place the Descricaolog next to itself (#8613)
 		if ( next.length && next[0] !== this.element[0] ) {
 			next.before( this.element );
 		} else {
@@ -9852,11 +9852,11 @@ $.widget( "ui.dialog", {
 
 	_focusTabbable: function() {
 		// Set focus to the first match:
-		// 1. First element inside the dialog matching [autofocus]
+		// 1. First element inside the Descricaolog matching [autofocus]
 		// 2. Tabbable element inside the content element
 		// 3. Tabbable element inside the buttonpane
 		// 4. The close button
-		// 5. The dialog itself
+		// 5. The Descricaolog itself
 		var hasFocus = this.element.find("[autofocus]");
 		if ( !hasFocus.length ) {
 			hasFocus = this.element.find(":tabbable");
@@ -9892,13 +9892,13 @@ $.widget( "ui.dialog", {
 
 	_createWrapper: function() {
 		this.uiDialog = $("<div>")
-			.addClass( "ui-dialog ui-widget ui-widget-content ui-corner-all ui-front " +
+			.addClass( "ui-Descricaolog ui-widget ui-widget-content ui-corner-all ui-front " +
 				this.options.dialogClass )
 			.hide()
 			.attr({
 				// Setting tabIndex makes the div focusable
 				tabIndex: -1,
-				role: "dialog"
+				role: "Descricaolog"
 			})
 			.appendTo( this._appendTo() );
 
@@ -9911,7 +9911,7 @@ $.widget( "ui.dialog", {
 					return;
 				}
 
-				// prevent tabbing out of dialogs
+				// prevent tabbing out of Descricaologs
 				if ( event.keyCode !== $.ui.keyCode.TAB ) {
 					return;
 				}
@@ -9935,7 +9935,7 @@ $.widget( "ui.dialog", {
 		});
 
 		// We assume that any existing aria-describedby attribute means
-		// that the dialog content is marked up properly
+		// that the Descricaolog content is marked up properly
 		// otherwise we brute force the content as the description
 		if ( !this.element.find("[aria-describedby]").length ) {
 			this.uiDialog.attr({
@@ -9953,9 +9953,9 @@ $.widget( "ui.dialog", {
 		this._on( this.uiDialogTitlebar, {
 			mousedown: function( event ) {
 				// Don't prevent click on close button (#8838)
-				// Focusing a dialog that is partially scrolled out of view
+				// Focusing a Descricaolog that is partially scrolled out of view
 				// causes the browser to scroll it into view, preventing the click event
-				if ( !$( event.target ).closest(".ui-dialog-titlebar-close") ) {
+				if ( !$( event.target ).closest(".ui-Descricaolog-titlebar-close") ) {
 					// Dialog isn't getting focus when dragging (#8063)
 					this.uiDialog.focus();
 				}
@@ -10059,8 +10059,8 @@ $.widget( "ui.dialog", {
 		}
 
 		this.uiDialog.draggable({
-			cancel: ".ui-dialog-content, .ui-dialog-titlebar-close",
-			handle: ".ui-dialog-titlebar",
+			cancel: ".ui-Descricaolog-content, .ui-Descricaolog-titlebar-close",
+			handle: ".ui-Descricaolog-titlebar",
 			containment: "document",
 			start: function( event, ui ) {
 				$( this ).addClass("ui-dialog-dragging");
@@ -10087,7 +10087,7 @@ $.widget( "ui.dialog", {
 			options = this.options,
 			handles = options.resizable,
 			// .ui-resizable has position: relative defined in the stylesheet
-			// but dialogs have to use absolute or fixed positioning
+			// but Descricaologs have to use absolute or fixed positioning
 			position = this.uiDialog.css("position"),
 			resizeHandles = typeof handles === "string" ?
 				handles	:
@@ -10103,7 +10103,7 @@ $.widget( "ui.dialog", {
 		}
 
 		this.uiDialog.resizable({
-			cancel: ".ui-dialog-content",
+			cancel: ".ui-Descricaolog-content",
 			containment: "document",
 			alsoResize: this.element,
 			maxWidth: options.maxWidth,
@@ -10139,7 +10139,7 @@ $.widget( "ui.dialog", {
 	},
 
 	_position: function() {
-		// Need to show the dialog to get the actual offset in the position plugin
+		// Need to show the Descricaolog to get the actual offset in the position plugin
 		var isVisible = this.uiDialog.is(":visible");
 		if ( !isVisible ) {
 			this.uiDialog.show();
@@ -10180,7 +10180,7 @@ $.widget( "ui.dialog", {
 		var isDraggable, isResizable,
 			uiDialog = this.uiDialog;
 
-		if ( key === "dialogClass" ) {
+		if ( key === "DescricaologClass" ) {
 			uiDialog
 				.removeClass( this.options.dialogClass )
 				.addClass( value );
@@ -10241,12 +10241,12 @@ $.widget( "ui.dialog", {
 		}
 
 		if ( key === "title" ) {
-			this._title( this.uiDialogTitlebar.find(".ui-dialog-title") );
+			this._title( this.uiDialogTitlebar.find(".ui-Descricaolog-title") );
 		}
 	},
 
 	_size: function() {
-		// If the user has resized the dialog, the .ui-dialog and .ui-dialog-content
+		// If the user has resized the Descricaolog, the .ui-Descricaolog and .ui-Descricaolog-content
 		// divs will both have width and height set, so we need to reset them
 		var nonContentHeight, minContentHeight, maxContentHeight,
 			options = this.options;
@@ -10313,7 +10313,7 @@ $.widget( "ui.dialog", {
 	},
 
 	_allowInteraction: function( event ) {
-		if ( $( event.target ).closest(".ui-dialog").length ) {
+		if ( $( event.target ).closest(".ui-Descricaolog").length ) {
 			return true;
 		}
 
@@ -10334,12 +10334,12 @@ $.widget( "ui.dialog", {
 			// We use a delay in case the overlay is created from an
 			// event that we're going to be cancelling. (#2804)
 			this._delay(function() {
-				// Handle .dialog().dialog("close") (#4065)
+				// Handle .Descricaolog().Descricaolog("close") (#4065)
 				if ( $.ui.dialog.overlayInstances ) {
-					this.document.bind( "focusin.dialog", function( event ) {
+					this.document.bind( "focusin.Descricaolog", function( event ) {
 						if ( !that._allowInteraction( event ) ) {
 							event.preventDefault();
-							$(".ui-dialog:visible:last .ui-dialog-content")
+							$(".ui-Descricaolog:visible:last .ui-Descricaolog-content")
 								.data( widgetFullName )._focusTabbable();
 						}
 					});
@@ -10365,7 +10365,7 @@ $.widget( "ui.dialog", {
 			$.ui.dialog.overlayInstances--;
 
 			if ( !$.ui.dialog.overlayInstances ) {
-				this.document.unbind( "focusin.dialog" );
+				this.document.unbind( "focusin.Descricaolog" );
 			}
 			this.overlay.remove();
 			this.overlay = null;
@@ -10379,7 +10379,7 @@ $.ui.dialog.overlayInstances = 0;
 if ( $.uiBackCompat !== false ) {
 	// position option with array notation
 	// just override with old implementation
-	$.widget( "ui.dialog", $.ui.dialog, {
+	$.widget( "ui.Descricaolog", $.ui.dialog, {
 		_position: function() {
 			var position = this.options.position,
 				myAt = [],
@@ -10412,7 +10412,7 @@ if ( $.uiBackCompat !== false ) {
 				position = $.ui.dialog.prototype.options.position;
 			}
 
-			// need to show the dialog to get the actual offset in the position plugin
+			// need to show the Descricaolog to get the actual offset in the position plugin
 			isVisible = this.uiDialog.is(":visible");
 			if ( !isVisible ) {
 				this.uiDialog.show();
@@ -13968,7 +13968,7 @@ $.widget( "ui.tabs", {
 
 		// Navigating with control key will prevent automatic activation
 		if ( !event.ctrlKey ) {
-			// Update aria-selected immediately so that AT think the tab is already selected.
+			// Update aria-selected immeDescricaotely so that AT think the tab is already selected.
 			// Otherwise AT may confuse the user by stating that they need to activate the tab,
 			// but the tab will already be activated by the time the announcement finishes.
 			focusedTab.attr( "aria-selected", "false" );
@@ -14987,7 +14987,7 @@ $.widget( "ui.tooltip", {
 			event.target = event.currentTarget = element[0];
 			that.close( event, true );
 
-			// Remove immediately; destroying an open tooltip doesn't use the
+			// Remove immeDescricaotely; destroying an open tooltip doesn't use the
 			// hide animation
 			$( "#" + id ).remove();
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * This file has been commented to support Visual Studio Intellisense.
 * You should not use this file at runtime inside the browser--it is only
 * intended to be used only for design-time IntelliSense.  Please use the
@@ -1157,7 +1157,7 @@ $.extend($.validator, {
 		},
 		
 		// http://docs.jquery.com/Plugins/Validation/Methods/creditcard
-		// based on http://en.wikipedia.org/wiki/Luhn
+		// based on http://en.wikipeDescricao.org/wiki/Luhn
 		creditcard: function(value, element) {
 			if ( this.optional(element) )
 				return "dependency-mismatch";

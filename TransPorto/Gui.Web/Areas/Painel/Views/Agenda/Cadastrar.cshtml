@@ -7,34 +7,61 @@
 
 <h2>Cadastrar</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Agenda</legend>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.DataAgendada)
+            @Html.LabelFor(model => model.Veiculo)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DataAgendada)
-            @Html.ValidationMessageFor(model => model.DataAgendada)
+            @Html.DropDownList("Veiculo")
+            @Html.ValidationMessageFor(model => model.Veiculo)
         </div>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.OrigemDestino)
+            @Html.LabelFor(model => model.Motorista)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.OrigemDestino)
-            @Html.ValidationMessageFor(model => model.OrigemDestino)
+            @Html.DropDownList("Motorista")
+            @Html.ValidationMessageFor(model => model.Motorista)
         </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Passageiro)
+        </div>
+        <div class="editor-field">
+            @Html.ListBox("Passageiro")
+                @Html.ValidationMessageFor(model => model.Passageiro)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DataAgendada)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DataAgendada)
+                @Html.ValidationMessageFor(model => model.DataAgendada)
+            </div>
 
-        <p>
-            <input type="submit" value="Cadastrar" />
-            @Html.ActionLink("Voltar", "Index")
-        </p>
-    </fieldset>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.OrigemDestino)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("OrigemDestino")
+                @Html.ValidationMessageFor(model => model.OrigemDestino)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Horario)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Horario")
+                @Html.ValidationMessageFor(model => model.Horario)
+            </div>
+            <p>
+                <input type="submit" value="Cadastrar" />
+                @Html.ActionLink("Voltar", "Index")
+            </p>
+        </fieldset>
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

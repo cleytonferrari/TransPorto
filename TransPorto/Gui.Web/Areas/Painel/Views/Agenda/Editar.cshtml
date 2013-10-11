@@ -7,13 +7,35 @@
 
 <h2>Editar</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Agenda</legend>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Veiculo)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Veiculo")
+            @Html.ValidationMessageFor(model => model.Veiculo)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Motorista)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Motorista")
+            @Html.ValidationMessageFor(model => model.Motorista)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Passageiro)
+        </div>
+        <div class="editor-field">
+            @Html.ListBox("Passageiro")
+            @Html.ValidationMessageFor(model => model.Passageiro)
+        </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.DataAgendada)
         </div>
@@ -26,10 +48,16 @@
             @Html.LabelFor(model => model.OrigemDestino)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.OrigemDestino)
+            @Html.DropDownList("OrigemDestino")
             @Html.ValidationMessageFor(model => model.OrigemDestino)
         </div>
-
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Horario)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Horario")
+            @Html.ValidationMessageFor(model => model.Horario)
+        </div>
         @Html.HiddenFor(model => model.Id)
 
         <p>

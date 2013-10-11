@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Aplicacao;
 using Dominio;
 
 namespace Gui.Web.Areas.Painel.Controllers
 {
+    [Authorize]
     public class UsuarioController : Controller
     {
         //
@@ -68,6 +70,11 @@ namespace Gui.Web.Areas.Painel.Controllers
         public ActionResult Detalhes(string id)
         {
             return View(Construtor<Usuario>.AplicacaoUsuario().ListarPorId(id));
+        }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home", new { Area = "" });
         }
     }
 }

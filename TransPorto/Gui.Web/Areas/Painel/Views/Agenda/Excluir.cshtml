@@ -10,22 +10,44 @@
 <h3>Você realmente deseja excluir este registro?</h3>
 <fieldset>
     <legend>Agenda</legend>
-
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.DataAgendada)
+        @Html.DisplayNameFor(model => model.Veiculo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Veiculo)
+    </div><div class="display-label">
+        @Html.DisplayNameFor(model => model.Motorista)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Motorista)
+    </div><div class="display-label">
+        @Html.DisplayNameFor(model => model.Passageiro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Passageiro)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.DataAgendada)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DataAgendada)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.OrigemDestino)
+        @Html.DisplayNameFor(model => model.OrigemDestino)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.OrigemDestino)
     </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Horario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Horario)
+    </div>
 </fieldset>
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     <p>
         <input type="submit" value="Excluir" /> |

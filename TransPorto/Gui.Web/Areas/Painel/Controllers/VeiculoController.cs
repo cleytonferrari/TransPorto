@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Net.Mime;
 using System.Web.Mvc;
 using Aplicacao;
 using Dominio;
 
 namespace Gui.Web.Areas.Painel.Controllers
 {
+    [Authorize]
     public class VeiculoController : Controller
     {
         //
@@ -18,21 +21,27 @@ namespace Gui.Web.Areas.Painel.Controllers
 
         public ActionResult Cadastrar()
         {
+            CarregarDiaDaSemana();
+            CarregarEstatus();
             return View();
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(Veiculo passageiro)
+        public ActionResult Cadastrar(Veiculo veiculo)
         {
+            CarregarDiaDaSemana();
+            CarregarEstatus();
             if (!ModelState.IsValid)
-                return View(passageiro);
-            Construtor<Veiculo>.AplicacaoVeiculo().Salvar(passageiro);
+                return View(veiculo);
+            Construtor<Veiculo>.AplicacaoVeiculo().Salvar(veiculo);
             return RedirectToAction("Index", "Veiculo");
 
         }
 
         public ActionResult Editar(string id)
         {
+            CarregarDiaDaSemana();
+            CarregarEstatus();
             var veiculo = Construtor<Veiculo>.AplicacaoVeiculo().ListarPorId(id);
             if (veiculo == null)
                 return HttpNotFound();
@@ -40,11 +49,13 @@ namespace Gui.Web.Areas.Painel.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Veiculo passageiro)
+        public ActionResult Editar(Veiculo veiculo)
         {
+            CarregarDiaDaSemana();
+            CarregarEstatus();
             if (!ModelState.IsValid)
-                return View(passageiro);
-            Construtor<Veiculo>.AplicacaoVeiculo().Salvar(passageiro);
+                return View(veiculo);
+            Construtor<Veiculo>.AplicacaoVeiculo().Salvar(veiculo);
             return RedirectToAction("Index", "Veiculo");
         }
 
@@ -57,9 +68,9 @@ namespace Gui.Web.Areas.Painel.Controllers
         }
 
         [HttpPost, ActionName("Excluir")]
-        public ActionResult ConfirmarExcluir(Veiculo passageiro)
+        public ActionResult ConfirmarExcluir(Veiculo veiculo)
         {
-            Construtor<Veiculo>.AplicacaoVeiculo().Excluir(passageiro.Id);
+            Construtor<Veiculo>.AplicacaoVeiculo().Excluir(veiculo.Id);
             return RedirectToAction("Index", "Veiculo");
         }
 
@@ -70,17 +81,33 @@ namespace Gui.Web.Areas.Painel.Controllers
 
         public void CarregarDiaDaSemana()
         {
-            List<string> DiaDaSemana = new List<string>
-                                       {
-                                           "Segunda",
-                                           "Terça",
-                                           "Quarta",
-                                           "Quinta",
-                                           "Sexta",
-                                           "Sabado",
-                                           "Domingo"
-                                       };
-            ViewBag.ListaDeDias = DiaDaSemana;
+            var lista = new[]{
+                new SelectListItem
+                        {Text = "Segunda-Feira",Value = "Segunda-Feira",Selected = true},
+                new SelectListItem()
+                        {Text = "Terça-Feira",Value = "Terça-Feira"},
+                        new SelectListItem()
+                        {Text = "Quarta-Feira",Value = "Quarta-Feira"},
+                        new SelectListItem()
+                        {Text = "Quinta-Feira",Value = "Quinta-Feira"},
+                        new SelectListItem()
+                        {Text = "Sexta-Feira",Value = "Sexta-Feira"},
+                        new SelectListItem()
+                        {Text = "Sabado",Value = "Sabado"},
+                        new SelectListItem()
+                        {Text = "Domingo",Value = "Domingo"}
+            };
+            ViewBag.Disponivel = lista.Select(x => new SelectListItem { Text = x.Text, Value = x.Value });
+        }
+
+        public void CarregarEstatus()
+        {
+            var lista = new[]
+                        {
+                            new SelectListItem{Text = "Sim",Value = "Sim"},
+                            new SelectListItem{Text = "Não",Value = "Não"}
+                        };
+            ViewBag.Estatus = lista.Select(x => new SelectListItem {Text = x.Text, Value = x.Value});
         }
     }
 }
