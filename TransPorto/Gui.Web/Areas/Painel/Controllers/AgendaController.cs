@@ -36,35 +36,18 @@ namespace Gui.Web.Areas.Painel.Controllers
             CarregarOrigemDestino();
             CarregarHorarios();
 
-            var agendar = new Agenda
-            {
-                Veiculo = new Veiculo
-                {
-                    Id = agenda.Veiculo.Id
-                },
-                Motorista = new Motorista
-                {
-                    Id = agenda.Motorista.Id
-                },
-                Passageiro = new Passageiro
-                {
-                    Id = agenda.Passageiro.Id
-                },
-                OrigemDestino = agenda.OrigemDestino,
-                DataAgendada = agenda.DataAgendada,
-                Horario = agenda.Horario,
-            };
-
             if (!ModelState.IsValid)
                 return View(agenda);
 
             var data = Convert.ToDateTime(agenda.DataAgendada);
             if (data >= DateTime.Now)
             {
-                Construtor<Agenda>.AplicacaoAgenda().Salvar(agendar);
+                Construtor<Agenda>.AplicacaoAgenda().Salvar(agenda);
                 return RedirectToAction("Index", "Agenda");
             }
-            else {
+            else
+            {
+                ViewBag.Msg = "A data deve ser igual ou posterior a atual!";
                 return View(agenda);
             }
         }
@@ -128,17 +111,20 @@ namespace Gui.Web.Areas.Painel.Controllers
 
         public void CarregarMotoristas()
         {
-            ViewBag.Motorista = Construtor<Motorista>.AplicacaoMotorista().ListarTodos().Select(x => new SelectListItem { Text = x.Nome, Value = x.Id });
+            //ViewBag.Motorista = Construtor<Motorista>.AplicacaoMotorista().ListarTodos().Select(x => new SelectListItem { Text = x.Nome, Value = x.Id });
+            ViewBag.Motorista = new SelectList(Construtor<Motorista>.AplicacaoMotorista().ListarTodos(), "Id", "Nome");
         }
 
         public void CarregarVeiculos()
         {
-            ViewBag.Veiculo = Construtor<Veiculo>.AplicacaoVeiculo().ListarTodos().Select(x => new SelectListItem { Text = x.Modelo, Value = x.Id });
+            //ViewBag.Veiculo = Construtor<Veiculo>.AplicacaoVeiculo().ListarTodos().Select(x => new SelectListItem { Text = x.Modelo, Value = x.Id });
+            ViewBag.Veiculo = new SelectList(Construtor<Veiculo>.AplicacaoVeiculo().ListarTodos(), "Id", "Modelo");
         }
 
         public void CarregarPassageiros()
         {
-            ViewBag.Passageiro = Construtor<Passageiro>.AplicacaoPassageiro().ListarTodos().Select(x => new SelectListItem { Text = x.Nome, Value = x.Id });
+            //ViewBag.Passageiro = Construtor<Passageiro>.AplicacaoPassageiro().ListarTodos().Select(x => new SelectListItem { Text = x.Nome, Value = x.Id });
+            ViewBag.Passageiro = new SelectList(Construtor<Passageiro>.AplicacaoPassageiro().ListarTodos(), "Id", "Nome");
         }
 
         public void CarregarHorarios()
@@ -166,6 +152,6 @@ namespace Gui.Web.Areas.Painel.Controllers
                         };
             ViewBag.Horario = lista.Select(x => new SelectListItem { Text = x.Text, Value = x.Value });
         }
-        
+
     }
 }

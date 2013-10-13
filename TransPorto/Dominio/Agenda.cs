@@ -12,7 +12,7 @@ namespace Dominio
         public Motorista Motorista { get; set; }
         public Passageiro Passageiro { get; set; }
         [Required(ErrorMessage = "O dia deste agendamento deve ser informado!")]
-        public DateTime DataAgendada { get; set; }
+        public string DataAgendada { get; set; }
         [Display(Name = "Origem e Destino")]
         [Required(ErrorMessage = "O campo deve ser informado!")]
         public string OrigemDestino { get; set; }

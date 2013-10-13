@@ -11,28 +11,28 @@
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-
+    <div class=".validation-summary-errors">@ViewBag.Msg</div>
     <fieldset>
         <legend>Agenda</legend>
         <div class="editor-label">
             @Html.LabelFor(model => model.Veiculo)
         </div>
         <div class="editor-field">
-            @Html.DropDownList("Veiculo")
+            @Html.DropDownList("Veiculo.Id", (SelectList)ViewBag.Veiculo)
             @Html.ValidationMessageFor(model => model.Veiculo)
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.Motorista)
         </div>
         <div class="editor-field">
-            @Html.DropDownList("Motorista")
+            @Html.DropDownList("Motorista.Id", (SelectList)ViewBag.Motorista)
             @Html.ValidationMessageFor(model => model.Motorista)
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.Passageiro)
         </div>
         <div class="editor-field">
-            @Html.ListBox("Passageiro")
+            @Html.ListBox("Passageiro.Id", (SelectList)ViewBag.Passageiro)
                 @Html.ValidationMessageFor(model => model.Passageiro)
             </div>
             <div class="editor-label">
